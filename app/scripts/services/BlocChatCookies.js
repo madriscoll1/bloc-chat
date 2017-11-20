@@ -4,7 +4,8 @@
     if (!currentUser || currentUser === '') {
       $uibModal.open({
          templateUrl: '/templates/login.html',
-         controller: 'ModalCtrl as modal'
+         controller: 'ModalCtrl as modal',
+         keyboard: false
       })
     }
   }

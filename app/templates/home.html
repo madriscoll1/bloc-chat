@@ -1,15 +1,20 @@
 <div class="chatrooms-list">
 
-  <h1>Bloc Chat!</h1>
-  <button class="create-room-button" type="button" ng-click="home.addRoom()">New Room</button>
-  <div ng-repeat="room in home.rooms">
-    <p class="room-name" ng-click="home.setActiveRoom(room)"> {{ room.name }}</p>
-  </div>
+   <h1>Bloc Chat!</h1>
+   <button class="create-room-button" type="button" ng-click="home.addRoom()">New Room</button>
+   <div ng-repeat="room in home.rooms">
+      <p class="room-name" ng-click="home.setActiveRoom(room)"> {{ room.name }}</p>
+   </div>
 </div>
 
 <div class="messages-list">
-  <h2 style="text-align:center;"> {{ home.activeRoom.name}}</h2>
-  <div class="messages" ng-repeat="message in home.messages">
-    <div class="user-message" style="text-align:center;">{{ message.content }}</div>
-  </div>
+   <h2 style="text-align:center;"> {{ home.activeRoom.name}}</h2>
+   <div class="messages" ng-repeat="message in home.messages">
+      <div class="user-name" style="text-align:center;">{{ message.username }}</div>
+      <div class="user-message" style="text-align:center;">{{ message.content }}</div>
+   </div>
+   <form class="compose-message">
+      <input type="text" class="message-box" placeholder="" ng-model="home.newMessage.content" style="width:300px;">
+      <button class="send-new-message" type="button" ng-click="home.sendMessage()">Send message</button>
+   </form>
 </div>
